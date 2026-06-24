@@ -64,6 +64,28 @@ first API response).
 - **Language** — reset-time labels (`sa`, `dk`, `g`) and the fallback message are in
   Turkish by default; swap them in `fmt_reset()` and the `parts` block.
 
+## Designs
+
+Ten alternative looks live in [`designs/`](designs/). Swap any of them in by pointing
+`command` at the file you like (e.g. `python3 ~/.claude/statusline.py` →
+`python3 ~/.claude/designs/05-synthwave.py`).
+
+| # | Design | Vibe & extra features |
+| --- | --- | --- |
+| 01 | [Minimal Mono](designs/01-minimal-mono.py) | Quiet grayscale, emoji-free, thin `▰▱` bars |
+| 02 | [Powerline](designs/02-powerline.py) | Solid bg segments with `` arrow transitions (Powerline/Nerd Font) |
+| 03 | [Braille Density](designs/03-braille.py) | Ultra-compact braille dot-density bars |
+| 04 | [Gradient Blocks](designs/04-gradient-blocks.py) | Smooth sub-cell partial-block gradient fill |
+| 05 | [Synthwave Neon](designs/05-synthwave.py) | Glowing magenta→cyan retro palette |
+| 06 | [Nerd Font](designs/06-nerdfont.py) | Crisp dev-console glyphs instead of emoji |
+| 07 | [ASCII Retro](designs/07-ascii-retro.py) | Pure ASCII `[#### ]` bars — works in any terminal |
+| 08 | [Dot Meter](designs/08-dots.py) | Glanceable round-pip `●●●○○` meters |
+| 09 | [Git Aware](designs/09-git-aware.py) | **+ git branch, dirty/clean state, ahead/behind sync** |
+| 10 | [Full Dashboard](designs/10-dashboard.py) | **+ git branch, clock, token count & session $ cost estimate** |
+
+Designs 09 and 10 add features beyond the base statusline (git state, time, token
+spend). All ten read the same Claude Code JSON schema, so they're drop-in swappable.
+
 ## License
 
 MIT © Devrim Tunçer
