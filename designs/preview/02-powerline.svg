@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="738" height="72" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15">
+<rect x="0" y="0" width="738" height="72" rx="10" fill="#1a1b26"/>
+<circle cx="18" cy="16" r="5" fill="#ff5f56"/>
+<circle cx="34" cy="16" r="5" fill="#ffbd2e"/>
+<circle cx="50" cy="16" r="5" fill="#27c93f"/>
+<rect x="18.0" y="27.0" width="225.0" height="22.0" fill="#005f87"/>
+<rect x="243.0" y="27.0" width="9.0" height="22.0" fill="#af5f00"/>
+<rect x="252.0" y="27.0" width="81.0" height="22.0" fill="#af5f00"/>
+<rect x="333.0" y="27.0" width="9.0" height="22.0" fill="#008700"/>
+<rect x="342.0" y="27.0" width="126.0" height="22.0" fill="#008700"/>
+<rect x="468.0" y="27.0" width="9.0" height="22.0" fill="#008700"/>
+<rect x="477.0" y="27.0" width="117.0" height="22.0" fill="#008700"/>
+<rect x="594.0" y="27.0" width="9.0" height="22.0" fill="#5f005f"/>
+<rect x="603.0" y="27.0" width="108.0" height="22.0" fill="#5f005f"/>
+<text x="18.0" y="42.0" fill="#eeeeee" font-weight="bold" xml:space="preserve">  claude-code-statusline </text>
+<text x="243.0" y="42.0" fill="#005f87" xml:space="preserve"></text>
+<text x="252.0" y="42.0" fill="#eeeeee" font-weight="bold" xml:space="preserve"> ctx 82% </text>
+<text x="333.0" y="42.0" fill="#af5f00" xml:space="preserve"></text>
+<text x="342.0" y="42.0" fill="#eeeeee" font-weight="bold" xml:space="preserve"> 5h 41% 2h14m </text>
+<text x="468.0" y="42.0" fill="#008700" xml:space="preserve"></text>
+<text x="477.0" y="42.0" fill="#eeeeee" font-weight="bold" xml:space="preserve"> 7d 23% 4d6h </text>
+<text x="594.0" y="42.0" fill="#008700" xml:space="preserve"></text>
+<text x="603.0" y="42.0" fill="#eeeeee" font-weight="bold" xml:space="preserve"> ◆ Opus 4.8 </text>
+<text x="711.0" y="42.0" fill="#5f005f" xml:space="preserve"></text>
+</svg>

@@ -4,9 +4,7 @@ A single-line, color-coded status bar for [Claude Code](https://claude.com/claud
 Shows your working folder, the active model, context-window usage, and your 5-hour /
 weekly rate limits — all with static green→amber→red segmented bars.
 
-```
-📁 my-project  │  🧠 ctx ███████─ 82%  │  ⏱ 5sa ████──── 41% ↻ 2sa 14dk  │  📅 7g ██────── 23% ↻ 4g 6sa  │  ◆ Opus 4.8
-```
+![statusline preview](designs/preview/base.svg)
 
 ## Features
 
@@ -68,23 +66,42 @@ first API response).
 
 Ten alternative looks live in [`designs/`](designs/). Swap any of them in by pointing
 `command` at the file you like (e.g. `python3 ~/.claude/statusline.py` →
-`python3 ~/.claude/designs/05-synthwave.py`).
+`python3 ~/.claude/designs/05-synthwave.py`). All ten read the same Claude Code JSON
+schema, so they're drop-in swappable.
 
-| # | Design | Vibe & extra features |
-| --- | --- | --- |
-| 01 | [Minimal Mono](designs/01-minimal-mono.py) | Quiet grayscale, emoji-free, thin `▰▱` bars |
-| 02 | [Powerline](designs/02-powerline.py) | Solid bg segments with `` arrow transitions (Powerline/Nerd Font) |
-| 03 | [Braille Density](designs/03-braille.py) | Ultra-compact braille dot-density bars |
-| 04 | [Gradient Blocks](designs/04-gradient-blocks.py) | Smooth sub-cell partial-block gradient fill |
-| 05 | [Synthwave Neon](designs/05-synthwave.py) | Glowing magenta→cyan retro palette |
-| 06 | [Nerd Font](designs/06-nerdfont.py) | Crisp dev-console glyphs instead of emoji |
-| 07 | [ASCII Retro](designs/07-ascii-retro.py) | Pure ASCII `[#### ]` bars — works in any terminal |
-| 08 | [Dot Meter](designs/08-dots.py) | Glanceable round-pip `●●●○○` meters |
-| 09 | [Git Aware](designs/09-git-aware.py) | **+ git branch, dirty/clean state, ahead/behind sync** |
-| 10 | [Full Dashboard](designs/10-dashboard.py) | **+ git branch, clock, token count & session $ cost estimate** |
+### 01 · Minimal Mono — quiet grayscale, emoji-free, thin `▰▱` bars
+![01](designs/preview/01-minimal-mono.svg)
 
-Designs 09 and 10 add features beyond the base statusline (git state, time, token
-spend). All ten read the same Claude Code JSON schema, so they're drop-in swappable.
+### 02 · Powerline — solid bg segments with `` arrows (needs a Powerline/Nerd Font)
+![02](designs/preview/02-powerline.svg)
+
+### 03 · Braille Density — ultra-compact braille dot-density bars
+![03](designs/preview/03-braille.svg)
+
+### 04 · Gradient Blocks — smooth sub-cell partial-block gradient fill
+![04](designs/preview/04-gradient-blocks.svg)
+
+### 05 · Synthwave Neon — glowing magenta→cyan retro palette
+![05](designs/preview/05-synthwave.svg)
+
+### 06 · Nerd Font — crisp dev-console glyphs instead of emoji (needs a Nerd Font)
+![06](designs/preview/06-nerdfont.svg)
+
+### 07 · ASCII Retro — pure ASCII `[#### ]` bars, works in any terminal
+![07](designs/preview/07-ascii-retro.svg)
+
+### 08 · Dot Meter — glanceable round-pip `●●●○○` meters
+![08](designs/preview/08-dots.svg)
+
+### 09 · Git Aware — **adds git branch, dirty/clean state, ahead/behind sync**
+![09](designs/preview/09-git-aware.svg)
+
+### 10 · Full Dashboard — **adds git branch, clock, token count & session $ cost estimate**
+![10](designs/preview/10-dashboard.svg)
+
+> Previews are rendered SVGs; exact glyph rendering depends on your terminal font.
+> Designs 02 and 06 need a [Nerd Font](https://www.nerdfonts.com); the rest work
+> with any Unicode-capable font (07 works even without Unicode).
 
 ## License
 
