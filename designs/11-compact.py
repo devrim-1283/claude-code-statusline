@@ -6,10 +6,27 @@ The small-footprint build: labeled colored percentages, nothing else.
 Everything the base tracks, squeezed to the narrowest readable single line.
 Dropped vs base/09/10: bars, reset clocks, emoji, ahead/behind, token/cost.
 """
-import sys, json, os, subprocess
+import sys, json, os, time, subprocess
 
 def c(n): return f"\033[38;5;{n}m"
 B, R, DIM = "\033[1m", "\033[0m", "\033[2m"
+
+def reset(e):
+    """Time until reset, single dominant unit: '4g', '2sa', '45dk', 'şimdi'."""
+    try:
+        rem = int(e) - int(time.time())
+    except (TypeError, ValueError, OverflowError):
+        return ""
+    if rem <= 0:
+        return "şimdi"
+    d, rem = divmod(rem, 86400)
+    h, rem = divmod(rem, 3600)
+    m = rem // 60
+    if d:
+        return f"{d}g"
+    if h:
+        return f"{h}sa"
+    return f"{max(1, m)}dk"
 
 def pf(p):
     try: return f"{round(float(p))}%"
@@ -20,8 +37,12 @@ def pcol(p):
     except (TypeError, ValueError): return c(46)
     return c(196) if p >= 90 else (c(214) if p >= 75 else c(46))
 
-def metric(label, p):
-    return f"{DIM}{c(245)}{label}{R} {pcol(p)}{pf(p)}{R}"
+def metric(label, p, e=None):
+    seg = f"{DIM}{c(245)}{label}{R} {pcol(p)}{pf(p)}{R}"
+    r = reset(e)
+    if r:
+        seg += f" {DIM}{c(245)}{r}{R}"
+    return seg
 
 def git_branch(cwd):
     def run(*a):
@@ -61,9 +82,9 @@ def main():
         parts.append(g)
     parts.append(metric("ctx", cp))
     if h5:
-        parts.append(metric("5h", h5.get("used_percentage")))
+        parts.append(metric("5h", h5.get("used_percentage"), h5.get("resets_at")))
     if d7:
-        parts.append(metric("7d", d7.get("used_percentage")))
+        parts.append(metric("7d", d7.get("used_percentage"), d7.get("resets_at")))
     parts.append(f"{B}{c(159)}{model}{R}")
 
     sys.stdout.write("  ".join(parts))
