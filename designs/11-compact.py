@@ -12,7 +12,7 @@ def c(n): return f"\033[38;5;{n}m"
 B, R, DIM = "\033[1m", "\033[0m", "\033[2m"
 
 def reset(e):
-    """Time until reset, single dominant unit: '4g', '2sa', '45dk', 'şimdi'."""
+    """Time until reset: '4g 3sa 12dk', '2sa 14dk', '45dk', 'şimdi'."""
     try:
         rem = int(e) - int(time.time())
     except (TypeError, ValueError, OverflowError):
@@ -23,9 +23,9 @@ def reset(e):
     h, rem = divmod(rem, 3600)
     m = rem // 60
     if d:
-        return f"{d}g"
+        return f"{d}g {h}sa {m}dk"
     if h:
-        return f"{h}sa"
+        return f"{h}sa {m}dk"
     return f"{max(1, m)}dk"
 
 def pf(p):
